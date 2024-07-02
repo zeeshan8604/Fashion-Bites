@@ -1,0 +1,99 @@
+.product-detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.image-gallery-container {
+  width: 50%;
+}
+
+.product-info-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 50%;
+  padding: 0 20px;
+  position: relative;
+  top: -100px;
+}
+
+.product-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #32a897;
+}
+
+.product-category {
+  margin-top: 5px;
+  color: #777;
+}
+
+.product-price {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.size-options {
+  margin-top: 15px;
+  display: flex;
+}
+
+.size {
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #32a897;
+  border-radius: 4px;
+}
+
+.size.selected {
+  background-color: #32a897;
+  color: #fff;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+}
+
+.add-to-bag,
+.add-to-wishlist {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid #32a897;
+  border-radius: 4px;
+  color: #32a897;
+}
+.add-to-bag,
+.add-to-wishlist:hover {
+  background-color: #32a897;
+  color: white;
+}
+
+.product-description {
+  margin-top: 20px;
+  color: #555;
+}
+
+.star-rating {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-star {
+  margin-right: 5px;
+  font-size: 18px;
+  color: gold;
+}
+
+.fa-star.gray {
+  color: #ccc;
+}

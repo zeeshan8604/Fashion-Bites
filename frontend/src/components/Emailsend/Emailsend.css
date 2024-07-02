@@ -1,0 +1,37 @@
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 2px;
+  resize: none;
+}
+
+input[type="submit"] {
+  width: auto; /* Adjust the width as needed */
+  background-color: #61dafb;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* input[type="submit"]:hover {
+  background-color: #2188ff;
+} */
+.btn {
+  width: 100px;
+}

@@ -1,0 +1,29 @@
+.Trending {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.Trending h1 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.Trending hr {
+  border: 3px solid rgb(166, 165, 165);
+  width: 50%;
+  margin: 0 auto 20px;
+}
+
+.trending-now {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  max-width: 1200px;
+}

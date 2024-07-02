@@ -1,0 +1,33 @@
+.Trending {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.Trending h1 {
+  color: #32a897;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.Trending hr {
+  border: 3px solid #32a897;
+  width: 50%;
+  margin: 0 auto 20px;
+}
+
+.trending-now {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  /* margin: 0 auto; Center the grid */
+  max-width: 1200px; /* Adjust the max-width as per your design */
+}
+
+/* Styles for the Item component (adjust as needed) */

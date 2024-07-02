@@ -1,0 +1,79 @@
+.wishlist-container {
+  padding: 20px;
+  text-align: center; /* Or adjust as needed */
+}
+
+.wishlist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wishlist-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 250px; /* Or adjust depending on layout */
+}
+
+.wishlist-item-image {
+  text-align: center;
+}
+
+.wishlist-item-image img {
+  width: 100%;
+  height: 250px; /* Or adjust as needed */
+  object-fit: cover;
+}
+
+.wishlist-item-details {
+  padding: 10px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-category {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.wishlist-item-price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.actual-price,
+.discount-price {
+  font-size: 0.9em;
+}
+
+.discount-percent {
+  color: red;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wishlist-remove-button {
+  background-color: white;
+  color: #32a897;
+  padding: 10px;
+  border: 1px solid #32a897;
+  cursor: pointer;
+}
+.wishlist_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,12 @@
+/* Product.css */
+
+/* Container for the Product component */
+.product-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: calc(
+    100vh - 120px
+  ); /* Adjust based on your Navbar and Footer height */
+  overflow-y: auto; /* Add a vertical scrollbar if needed */
+}

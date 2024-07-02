@@ -1,0 +1,119 @@
+.Infoform {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+.radio {
+  display: flex;
+  align-items: center;
+}
+.row {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 30px;
+}
+.row1 {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}
+.row1 p {
+  margin: 10px;
+}
+.row div {
+  flex: 1;
+  margin-right: 10px;
+}
+.row1 div {
+  flex: 1;
+}
+
+.info {
+  width: 15rem;
+  padding: 10px;
+  height: 25px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: black;
+}
+.addressinfo {
+  width: 33.6rem;
+  height: 60px;
+}
+input::placeholder {
+  color: #999;
+}
+label {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+button:focus {
+  outline: none;
+}
+.address_confirm {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.address_confirm h3 {
+  margin-top: 0;
+}
+
+.content-info p {
+  margin: 5px 0;
+}
+
+.content-info p strong {
+  margin-right: 5px;
+}
+
+.confirm__editbtn button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.confirm__editbtn {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 20px;
+}
+.confirm__editbtn button:first-child {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.confirm__editbtn button:last-child {
+  background-color: #f44336;
+  color: #fff;
+}

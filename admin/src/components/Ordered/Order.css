@@ -1,0 +1,86 @@
+.order-list {
+  font-family: Arial, sans-serif;
+}
+
+.order-list h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-list th,
+.order-list td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.order-list th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.order-list td {
+  text-align: center;
+}
+
+.order-list .loading,
+.order-list .error,
+.order-list .no-orders {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.order-list .product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-list .product-list li {
+  margin-bottom: 5px;
+}
+
+.order-list .order-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.order-list .order-info {
+  margin-bottom: 20px;
+}
+
+.order-list .product-list-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-list .product-list {
+  margin: 0;
+  padding: 0;
+}
+
+.order-list .product-list li {
+  margin-bottom: 5px;
+}
+
+.button {
+  background-color: red;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button style when clicked */
+.button.clicked {
+  background-color: green; /* Change the color to your desired clicked color */
+}

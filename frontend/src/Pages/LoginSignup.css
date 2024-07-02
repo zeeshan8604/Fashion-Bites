@@ -1,0 +1,103 @@
+.LoginSignup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.login-container,
+.signup-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.login-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #32a897;
+  color: white;
+  gap: 7px;
+}
+.signup-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #32a897;
+  color: white;
+  gap: 7px;
+}
+.signup-left .login-left h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+.signup-left,
+.login-left p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.login-right,
+.signup-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  padding: 40px;
+}
+
+.form-heading {
+  color: #32a897;
+}
+
+.input-fill {
+  width: 80%;
+  background-color: white;
+  border-bottom: 2px solid #32a897;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: #32a897;
+  font-size: 18px;
+}
+.ok-btn {
+  background-color: #32a897;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.ok-btn {
+  background-color: yellow;
+}
+.LoginSignup-btn {
+  cursor: pointer;
+  color: red;
+  text-decoration: none;
+}
+
+.LoginSignup-btn:hover {
+  text-decoration: underline;
+}
+
+/* .switch-btn:hover {
+  text-decoration: underline;
+} */

@@ -1,0 +1,185 @@
+.main-div {
+  margin: 10px;
+  align-items: center;
+  padding: 10px;
+}
+.main-div h4 {
+  text-align: center;
+  font-size: 28px;
+  color: #32a897;
+}
+.cartitems {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 20px;
+}
+
+.cart-right {
+  width: 30%;
+}
+.palce-order-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #32a897;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-size: 600;
+  cursor: pointer;
+}
+.palce-order-btn:hover {
+  background-color: hsl(168, 54%, 40%);
+}
+
+.cart-all-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cart-items {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item-img {
+  width: 100px;
+  height: 130px;
+  margin-right: 20px;
+}
+
+.item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.price-tags {
+  display: flex;
+  gap: 8px;
+}
+.discount-price {
+  font-weight: 600;
+}
+.dicount-percent {
+  color: red;
+}
+.cart-item-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: space-between;
+}
+.product-name {
+  font-size: 16px;
+  color: black;
+}
+.product-category {
+  text-transform: uppercase;
+}
+.actual-price {
+  text-decoration: line-through;
+  margin: 3px;
+  color: #666;
+}
+.arrow {
+  margin-right: 5px;
+}
+
+.cart-item-detail p {
+  margin-bottom: 10px;
+}
+
+.size-quantity {
+  display: flex;
+}
+
+.size-quantity button {
+  width: 40px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #eee;
+  color: #333;
+  font-size: 18px;
+}
+
+.remove-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: #eee;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.remove-logo:hover {
+  align-items: flex-end;
+  background-color: #ccc;
+}
+
+.cart-price-detail {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cart-price-detail p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.Price-heading {
+  text-align: center;
+}
+.cart-discount,
+.free-text,
+.platform-fee {
+  color: rgb(47, 171, 95);
+}
+
+.Shipping-fee {
+  text-decoration: line-through;
+  color: #666;
+}
+.pricing a {
+  color: red;
+  text-decoration: none;
+}
+
+.pricing a:hover {
+  color: #666;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+p {
+  display: flex;
+}
