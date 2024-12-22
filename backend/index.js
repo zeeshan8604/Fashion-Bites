@@ -16,6 +16,8 @@ const cartcontroller = require("./controllers/cartcontroller");
 const wishlistcontroller = require("./controllers/wishlistcontroller");
 const ordercontroller = require("./controllers/ordercontroller");
 const searchcontroller = require("./controllers/searchcontroller");
+const searchistory = require("./controllers/Searchhistrorycontroller");
+const productreviewcontroller = require("./controllers/productreviewcontroller");
 
 app.use(express.json());
 
@@ -78,9 +80,12 @@ const fetchUser = async (req, res, next) => {
 app.post("/addproducts", productController.addProduct);
 app.delete("/api/products/:id", productController.removeProduct);
 app.get("/api/allproduct", productController.getProduct);
+app.get("/products/:id", productController.fetchProductsByIdAndRecommend);
 app.post("/login", userController.login);
 app.post("/signup", userController.signup);
-
+app.put("/updateuser", fetchUser, userController.updateUserProfile);
+app.get("/userprofiledata", fetchUser, userController.getUserProfile);
+app.get("/getallorder", fetchUser, userController.getOrders);
 /// creating endpoint for preimum brand
 app.get("/preimumbrand", ProductFetchcontroller.getPremiumProductsByBrand);
 
@@ -89,6 +94,10 @@ app.get("/clothingproduct", ProductFetchcontroller.getclothingcategory);
 
 // // Get Product By Id
 // app.get("/Product/:producId", ProductFetchcontroller.getProductById);
+
+//adding review to a product
+app.post("/:productId/reviews", fetchUser, productreviewcontroller.addReview);
+app.get("/:productId/get-reviews", productreviewcontroller.getReviews);
 
 //search system code
 app.get("/searchproducts", searchcontroller.searchProducts);
@@ -104,7 +113,13 @@ app.get("/allordertoadmin", ordercontroller.getAllOrder);
 // // to add new orders
 app.post("/addorder", fetchUser, ordercontroller.addOrder);
 
+// to post search histroy
+// app.post("/addsearchhistory", fetchUser, Historycontroller.searchhistory);
+app.post("/searchhistory", fetchUser, searchistory.searchhistory);
+app.get("/getsearchhistory", fetchUser, searchistory.fetchSearchHistory);
+
 app.patch("/updateorder/:id", ordercontroller.updateOrder);
+
 // running codeo
 
 app.listen(port, (err) => {

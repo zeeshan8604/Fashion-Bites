@@ -13,7 +13,7 @@ const searchProducts = async (req, res) => {
       {
         tags: { $regex: query, $options: "i" },
       },
-      "-_id" // Exclude _id field
+      "-_id"
     );
 
     // If no products found, return empty array

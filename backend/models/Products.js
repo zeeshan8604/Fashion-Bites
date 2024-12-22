@@ -54,6 +54,23 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  composition: {
+    // add percentage to material eg: cotton 80, polyester 20
+    type: String,
+    require: true,
+  },
+  additional_details: {
+    manufactured: {
+      type: String,
+      required: true,
+      default: "India",
+    },
+    country_origin: {
+      type: String,
+      required: true,
+      default: "India",
+    },
+  },
   tags: {
     type: String,
     required: true,

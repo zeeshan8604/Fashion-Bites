@@ -14,24 +14,6 @@ const getPremiumProductsByBrand = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
-// const getProductById = async (req, res) => {
-//   try {
-//     const productId = req.params.id;
-//     const product = await Product.findById(productId);
-//     if (!product) {
-//       return res.status(404).json({ message: "Product not found" });
-//     }
-//     res.status(200).json({
-//       product,
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       status: "failed",
-//       error,
-//     });
-//   }
-// };
-
 const getclothingcategory = async (req, res) => {
   try {
     const clothingProducts = await Product.find({ category: "clothing" });

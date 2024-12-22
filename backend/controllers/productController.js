@@ -65,8 +65,45 @@ const removeProduct = async (req, res) => {
   }
 };
 
+const fetchProductsByIdAndRecommend = async (req, res) => {
+  try {
+    const { id } = req.params; // Get the product ID from request parameters
+
+    // Step 1: Fetch the product by ID
+    const product = await Product.findOne({ id });
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Step 2: Extract subcategory and validate tags
+    const { subcategory, tags } = product;
+
+    // Check if tags exist and are valid
+    if (!tags || typeof tags !== "string") {
+      return res.status(400).json({ message: "Invalid tags data in product" });
+    }
+
+    // Convert tags string to array and randomly select two tags
+    const tagArray = tags.split(",").map((tag) => tag.trim());
+    const randomTags = tagArray.sort(() => 0.5 - Math.random()).slice(0, 2);
+
+    // Step 3: Query for matching products
+    const matchingProducts = await Product.find({
+      subcategory,
+      tags: { $in: randomTags }, // Check if any of the selected tags match
+    }).limit(10); // Limit results to 10
+
+    // Step 4: Respond with the data
+    res.status(200).json({ product, matchingProducts });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   addProduct,
   removeProduct,
   getProduct,
+  fetchProductsByIdAndRecommend,
 };
