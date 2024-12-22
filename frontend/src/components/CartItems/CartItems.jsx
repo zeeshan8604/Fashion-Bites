@@ -3,8 +3,8 @@ import { ShopContext } from "../../Context/ShopContext";
 import { MdDeleteOutline } from "react-icons/md";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import "./CartItem.css";
-import { Link } from "react-router-dom";
-// import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import cartemptylogo from "../Assets/Kids/nocartitem.png";
 
 const CartItems = () => {
   const {
@@ -15,9 +15,27 @@ const CartItems = () => {
     GetTotalCartItem,
   } = useContext(ShopContext);
 
+  const navigate = useNavigate();
+
   if (!localStorage.getItem("auth-token")) {
-    window.location.replace("/login");
+    navigate("/login");
   }
+
+  const totalCartItems = Object.values(cartItem).reduce(
+    (sum, qty) => sum + qty,
+    0
+  );
+
+  if (totalCartItems === 0) {
+    return (
+      <div className="no-product-div">
+        <img src={cartemptylogo} alt="" />
+      </div>
+    );
+  }
+
+  const discount = 0.15;
+  const discountedAmount = Math.round(GetTotalCartAmount() * discount);
 
   const placeOrder = () => {
     const orderData = {
@@ -37,12 +55,12 @@ const CartItems = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log("New order created:", data.data.order);
-          // Optionally, you can redirect or do something else upon successful order creation
+          // Optionally, redirect or do something else upon successful order creation
         })
         .catch((error) => console.error("Error creating order:", error));
     } else {
       console.error("User not authenticated");
-      // Handle authentication logic here (e.g., redirect to login page)
+      navigate("/login");
     }
   };
 
@@ -69,9 +87,10 @@ const CartItems = () => {
                       <div className="price-tags">
                         <p className="actual-price"> Rs {product.price}</p>
                         <p className="discount-price">
-                          Rs {Math.round(product.price - product.price * 0.15)}
+                          Rs{" "}
+                          {Math.round(product.price - product.price * discount)}
                         </p>
-                        <p className="dicount-percent">15%</p>
+                        <p className="dicount-percent">{discount * 100}%</p>
                       </div>
                       <p>↩︎ 14 days return available</p>
                     </div>
@@ -103,11 +122,9 @@ const CartItems = () => {
             </div>
             <div className="pricing">
               <p>
-                Discount <span>15 %</span>
+                Discount <span>{discount * 100} %</span>
               </p>
-              <p className="cart-discount">
-                Rs -{Math.round(GetTotalCartAmount() * 0.15)}
-              </p>
+              <p className="cart-discount">Rs -{discountedAmount}</p>
             </div>
             <div className="pricing">
               <p>Platform Fee</p>
@@ -123,12 +140,10 @@ const CartItems = () => {
             <hr />
             <div className="pricing">
               <p>Total Amount</p>
-              <p>
-                {GetTotalCartAmount() - Math.round(GetTotalCartAmount() * 0.15)}
-              </p>
+              <p>Rs {GetTotalCartAmount() - discountedAmount}</p>
             </div>
             <Link style={{ textDecoration: "none" }} to="/personalinfo">
-              <button className="palce-order-btn" onClick={placeOrder}>
+              <button className="place-order-btn" onClick={placeOrder}>
                 PLACE ORDER
               </button>
             </Link>

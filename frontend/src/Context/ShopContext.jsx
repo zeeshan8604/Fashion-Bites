@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-
 export const ShopContext = createContext(null);
 
 const getdefaultCart = () => {
@@ -22,12 +21,6 @@ const ShopContextProvider = (props) => {
   const [All_products, setAll_products] = useState([]);
   const [cartItem, setCartItem] = useState(getdefaultCart());
   const [wishlistItem, setWishlistItem] = useState(getdefaultWishlist());
-
-  // // Search-related states
-  // const [query, setQuery] = useState("");
-  // const [results, setResults] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:4000/api/allproduct")
@@ -103,7 +96,7 @@ const ShopContextProvider = (props) => {
     }
     return totalAmount;
   };
-
+  //for total cart item persent in cart
   const GetTotalCartItem = () => {
     let totalItem = 0;
     for (const item in cartItem) {
@@ -114,30 +107,16 @@ const ShopContextProvider = (props) => {
     return totalItem;
   };
 
-  // const handleSearch = async () => {
-  //   if (!query) {
-  //     setError("Query cannot be empty");
-  //     return;
-  //   }
-
-  //   setLoading(true);
-  //   setError(""); // Clear previous errors
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:4000/searchproducts?query=${query}`
-  //     );
-  //     if (!response.ok) {
-  //       throw new Error("Network response was not ok");
-  //     }
-  //     const data = await response.json();
-  //     setResults(data.products);
-  //   } catch (error) {
-  //     setError("An error occurred while searching");
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  // for total wish listed item present in your wishlist
+  const GetTotalWishlistItem = () => {
+    let totalItem = 0;
+    for (const item in wishlistItem) {
+      if (wishlistItem[item] > 0) {
+        totalItem += wishlistItem[item];
+      }
+    }
+    return totalItem;
+  };
 
   const contextValue = {
     All_products,
@@ -149,12 +128,7 @@ const ShopContextProvider = (props) => {
     GetTotalCartItem,
     removeFromWishlist,
     addToWishlist,
-    // query,
-    // setQuery,
-    // handleSearch,
-    // results,
-    // loading,
-    // error,
+    GetTotalWishlistItem,
   };
 
   return (

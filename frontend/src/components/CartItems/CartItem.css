@@ -183,3 +183,10 @@ hr {
 p {
   display: flex;
 }
+.no-product-div {
+  /* height: 100vh;
+  width: 100vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

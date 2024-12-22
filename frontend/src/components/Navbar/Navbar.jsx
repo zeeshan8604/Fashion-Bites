@@ -73,19 +73,34 @@ const Navbar = () => {
             </div>
             <ul class="dropdown-menu">
               <li>
-                <p>My Profile</p>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/profileinfo"
+                >
+                  <p>My Profile</p>
+                </Link>
               </li>
               <li>
-                <p>Orders</p>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/Orders"
+                >
+                  <p>Order</p>
+                </Link>
               </li>
               <li>
                 <p>HelpDesk</p>
               </li>
               <li>
+                <Link to={"/feedback"}>
+                  <p>Feedback</p>
+                </Link>
+              </li>
+              <li>
                 <p
                   onClick={() => {
                     localStorage.removeItem("auth-token");
-                    localStorage.removeItem("username"); // Clear username on logout
+                    localStorage.removeItem("username");
                     window.location.replace("/");
                   }}
                 >

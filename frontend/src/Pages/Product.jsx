@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import ProductDetail from "../components/ProductDisplay/ProductDisplay";
-// Import the CSS file at the top of your Product.js file
 import "./Product.css";
 
 // ... rest of your code

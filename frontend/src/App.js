@@ -14,6 +14,13 @@ import womens_banner from "./components/Assets/Women_banner.png";
 import kids_banner from "./components/Assets/banner_kids.png";
 import WishList from "./Pages/WishList";
 import PersonalInfo from "./Pages/PersonalInfo";
+import SearchResults from "./Pages/Searchresult";
+import FeedBack from "./components/Emailsend/Emailsend";
+import ProfilePage from "./components/ProfilePage/profilepage";
+import EditProfile from "./Pages/Editprofilepage";
+import Orders from "./Pages/Order";
+import AddReview from "./Pages/AddReview";
+
 function App() {
   return (
     <div className="App">
@@ -74,15 +81,25 @@ function App() {
             path="/womensjacket"
             element={<ShopSubCategory subcategory="womenjacket" />}
           />
+          <Route path="/addreview/:productId" element={<AddReview />} />
           {/**************  searchpagesresult ************/}
           <Route path="product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
+          {/* <Route path="recommend/products" element={<Productrecommend />}>
+            <Route path=":productId" element={<Productrecommend />} />
+          </Route> */}
+
           <Route path="/cart" element={<Cart />} />
           <Route path="/WishList" element={<WishList />} />
           <Route path="/login" element={<LoginSignup />} />
           {/* to get personal info and address */}
           <Route path="/personalinfo" element={<PersonalInfo />} />
+          <Route path="/profileinfo" element={<ProfilePage />} />
+          <Route path="/editprofile" element={<EditProfile />} />
+          <Route path="/Orders" element={<Orders />} />
+          <Route path="/feedback" element={<FeedBack />} />
+          <Route path="/results" element={<SearchResults />} />
         </Routes>
         <Footer />
       </BrowserRouter>

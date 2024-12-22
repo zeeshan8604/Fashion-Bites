@@ -1,0 +1,34 @@
+/* ProductReviews.css */
+.product-reviews {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.product-reviews h2 {
+  color: #333;
+  text-align: center;
+}
+
+.product-reviews ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-reviews li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-reviews li strong {
+  display: block;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.product-reviews li p {
+  margin: 5px 0;
+  color: #666;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LoginSignup.css";
 const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(false);
-  const [buttonColor, setButtonColor] = useState("#32a897");
+  const [buttonColor, setButtonColor] = useState("black");
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -101,11 +101,8 @@ const LoginSignup = () => {
               />
               <input
                 type="submit"
-                className="ok-btn"
+                className="ok-btn-login-signup"
                 style={{ backgroundColor: buttonColor }}
-                // onClick={() => {
-                //   setButtonColor(buttonColor === "white" ? "#32a897" : "white");
-                // }}
               />
             </form>
           </div>
@@ -144,11 +141,8 @@ const LoginSignup = () => {
               />
               <input
                 type="submit"
-                className="ok-btn"
+                className="ok-btn-login-signup "
                 style={{ backgroundColor: buttonColor }}
-                // onClick={() => {
-                //   setButtonColor(buttonColor === "white" ? "#32a897" : "white");
-                // }}
               />
             </form>
           </div>

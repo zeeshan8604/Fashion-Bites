@@ -1,53 +1,102 @@
-/* SearchBar.css */
-
-.search-bar {
+.search-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
-}
-.search_main {
-  display: flex;
-  flex-direction: row;
+  padding: 10px;
 }
 
-.search-form {
-  display: flex;
+.search-container input[type="text"] {
+  width: 250px;
+  padding: 10px;
+  margin-right: 5pxpx;
   border: 1px solid #ccc;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 }
 
-.search-input {
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  flex: 1;
-}
-
-.search-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+.search-container button {
   padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+}
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #09f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
 }
 
-.search-button:disabled {
-  background-color: #999;
-  cursor: not-allowed;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  background-color: white;
+  top: 83px;
+  left: -10px;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+  z-index: 5;
+}
+.dropdown-s {
+  color: black;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+  transform: perspective(1000px);
 }
 
-.search-button:not(:disabled):hover {
-  background-color: #0056b3;
+.dropdown-menu-s {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  z-index: -99999;
 }
 
-.error-message {
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
+.dropdown-menu-s li:first-child {
+  cursor: default;
+}
+
+.dropdown-menu-s p {
+  color: #000;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.dropdown-menu-s p:hover {
+  background: black;
+  color: #fff;
+}
+
+.dropdown-s:hover .dropdown-menu-s {
+  background: white;
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+  width: 100%;
+  color: black;
+  -webkit-transition: all 0.5s, background, 2s 0.5s linear;
+  transition: all 0.5s, background 2s 0.5s linear;
 }

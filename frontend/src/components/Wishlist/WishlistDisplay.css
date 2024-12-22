@@ -77,3 +77,27 @@
   gap: 5px;
   margin-bottom: 10px;
 }
+.wishlist_img {
+  height: 100vh;
+}
+.main-wishtlistempty-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-direction: row;
+}
+.wishlistofferimage {
+  height: 55vh;
+}
+.right-wishtlistempty-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.wishlistshoppingbtn {
+  margin: 5px;
+  cursor: pointer;
+}
